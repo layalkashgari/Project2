@@ -13,6 +13,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// CSS 
+app.use('/static', express.static(__dirname + '/public'));
+
 // logger config 
 var logger = require('morgan');
 app.use(logger('dev'));

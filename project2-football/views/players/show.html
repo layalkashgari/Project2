@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>player: {{fname}}{{lname}}</title>
+  <title>{{player.fname}}{{player.lname}}'s Details</title>
 </head>
 
 <body>
@@ -16,15 +16,17 @@
       <a href="/players">All Players</a>
     </div>
     <div class="players-traits">
-      <p>name: {{ players.fname}}</p>
-      <p>position: {{ players.position}}</p>
+      <p>Name: {{player.fname}} {{player.lname}}</p>
+      <p>position: {{player.position}}</p>
     </div>
 
-    <form action="/players/{{players.id}}?_method=DELETE" method="POST">
+    <form action="/players/{{player.id}}?_method=DELETE" method="POST">
       <button type="submit">Delete Player</button>
     </form>
-
-    <button type="submit" href="/players/edit">Edit player</button>
+    <form action="/players/{{player.id}}/edit" method="GET">
+      <button type="submit">Edit</button>
+    </form>
+   
   </div>
 
 </body>

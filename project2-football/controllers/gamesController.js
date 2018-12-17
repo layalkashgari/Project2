@@ -8,7 +8,6 @@ var players = require('../models/players');
 router.get('/', game.getAll, renderIndex);
 router.get('/:id', game.find, players.findByGame, renderShow);
 
-
 function renderIndex(req, res){
   var mustacheVariables = {
     games: res.locals.games // zy ma smeetaha fel models 
@@ -25,5 +24,7 @@ function renderShow(req,res){
   }
   res.render('./games/show', mustacheVariables);
 }
+
+
 
 module.exports = router;

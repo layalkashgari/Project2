@@ -4,25 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/static/styles/styles.css">
-  <title>Edit Pokemon</title>
+  <title>Edit {{player.fname}}</title>
 </head>
 <body>
   
   <h1>Edit Player</h1>
   <div class="links">
     <a href="/">Go Home</a>
-    <a href="/player">All Players</a>
+    <a href="/players">All Players</a>
   </div>
-  <form class="create-player" action="/pokemon/{{id}}?_method=PUT" method="POST" >
+  <form class="edit-player" action="/players/{{player.id}}?_method=PUT" method="POST" >
     <label for="fname">
-      Name: <input type="text" name="fname" id="fname" value="{{fname}}"/>
+      First Name: <input type="text" name="fname" id="fname" value="{{player.fname}}"/>
     </label>
     <label for="lname">
-      Type 1: <input type="text" name="lname" id="lname" value="{{lname}}"/>
+    Last Name: <input type="text" name="lname" id="lname" value="{{player.lname}}"/>
     </label>
     <label for="position">
-      Legendary: <input type="text" name='position' id='position' {{position}}>
+      Position: <input type="text" name='position' id='position' value="{{player.position}}">
     </label>
     <button type="submit">Submit Update</button>
   </form>
