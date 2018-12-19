@@ -2,33 +2,131 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{player.fname}}{{player.lname}}'s Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' href='/static/styles/styles.css'>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .fakeimg {
+  height: 200px;
+  background: #aaa;
+}
+
+body {
+ background-image: url("https://i.imgur.com/tdolZE1.png");
+ background-color: #cccccc;
+ 
+}
+</style>
+
+
+    <title>{{player.fname}} {{player.lname}}</title>
 </head>
 
+
 <body>
-  <div class="show-player">
-    <h1>{{fname}}</h1>
-    <div class="links">
-      <a href="/">Go Home</a>
-      <a href="/players">All Players</a>
-    </div>
-    <div class="players-traits">
-      <p>Name: {{player.fname}} {{player.lname}}</p>
-      <p>position: {{player.position}}</p>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Almamlaka</h1>
+        <p>Saudi women football team</p>
     </div>
 
-    <form action="/players/{{player.id}}?_method=DELETE" method="POST">
-      <button type="submit">Delete Player</button>
-    </form>
-    <form action="/players/{{player.id}}/edit" method="GET">
-      <button type="submit">Edit</button>
-    </form>
-   
-  </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Almamlaka</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="/players">Players </a></li>
+                    <li><a href="/games">Games</a></li>
+                    <li ><a href="/contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://elitetix.com/upload/event/orig/project_16898.jpeg" alt="Card image cap" width="60%" style="align-items: center">
+          <div class="card-body">
+            <h3 class="card-title">Player's details</h3>
+           
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Position: {{player.position}}</li>
+            <li class="list-group-item">Name: {{player.fname}} {{player.lname}}</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+          <div class="card-body">
+              <form action="/players/{{player.id}}?_method=DELETE" method="POST">
+                <button type="submit"  type="button" class="btn btn-success">Delete Player</button>
+              </form>
+              <br>
+              <form action="/players/{{player.id}}/edit" method="GET">
+                <button type="submit" type="button" class="btn btn-success">Edit</button>
+
+                <!-- Swal({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                  if (result.value) {
+                    Swal(
+                      'Deleted!',
+                      'Your file has been deleted.',
+                      'success'
+                    )
+                  }
+                }) -->
+              </form>
+          </div>
+        </div>
+        
+
+      
+     
+  
+      <!-- <div class="addplayer">
+          <a href="/players/new"> <button class="button"><span>Add a new player </span></button></a>
+      </div>  -->
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
 
 </body>
 
+
+
 </html>
+
+
+  

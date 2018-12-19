@@ -1,13 +1,11 @@
 var db = require('../db/config');
 
+var friendly = {};
 
-
-var games = {};
-
-games.getAll = function(req, res, next){
-  db.manyOrNone("SELECT * FROM games;")
+friendly.getAll = function(req, res, next){
+  db.manyOrNone("SELECT * FROM friendlygame;")
     .then(function(result){
-      res.locals.games = result;
+      res.locals.friendly = result;
       next()
     })
     .catch(function(error){
@@ -16,12 +14,12 @@ games.getAll = function(req, res, next){
     })
 }
 
-games.find = function (req, res, next) {
+friendly.find = function (req, res, next) {
   console.log(req.body)
   db.one("SELECT * FROM games WHERE id=$1;", [req.params.id])
     .then(function (result) {
       console.log(result)
-      res.locals.game = result;
+      res.locals.friendly = result;
       next();
     })
     .catch(function (error) {
@@ -31,4 +29,5 @@ games.find = function (req, res, next) {
 }
 
 
-module.exports = games;
+
+module.exports = friendly;

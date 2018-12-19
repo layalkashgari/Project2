@@ -8,6 +8,10 @@ app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
+// materlize 
+
+app.use('/static', express.static(__dirname + '/public'));
+
 // body parser config
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -28,13 +32,24 @@ app.get('/', (req, res) => {
   res.render('./index');
 })
 
+app.get('/about', (req, res) => {
+  res.render('./about');
+})
+
+app.get('/contact', (req, res) => {
+  res.render('./contact');
+})
 
 var playersController = require('./controllers/playersController');
 var gamesController = require('./controllers/gamesController');
+var friendlyController = require ('./controllers/friendlyController');
 
 
 app.use('/players', playersController);
-app.use('/games', gamesController);
+app.use('/games', gamesController, friendlyController);
+
+
+
 
 // get up to listen 
 app.listen(port, function () {

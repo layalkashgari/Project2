@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <style>
         .fakeimg {
   height: 200px;
@@ -21,12 +21,11 @@
 body {
  background-image: url("https://i.imgur.com/tdolZE1.png");
  background-color: #cccccc;
- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 </style>
 
 
-<title>{{game.date}}-{{game.location}}</title>
+    <title>Contact</title>
 </head>
 
 
@@ -50,48 +49,43 @@ body {
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li ><a href="/players">Players </a></li>
-                    <li class="active"><a href="/games">Games</a></li>
-                    <li ><a href="/contact">Contact</a></li>
+                    <li><a href="/players">Players </a></li>
+                    <li><a href="/games">Games</a></li>
+                    <li class="active"><a href="/contact">Contact</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    
-
     <div class="container">
+        <h3 class="text-center">Contact</h3>
+        <p class="text-center"><em>We love our fans!</em></p>
+        <div class="row test">
+            <div class="col-md-4">
+                <p>Fan? Drop a note.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
+                <p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <div class="row">
 
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://elitetix.com/upload/event/orig/project_16898.jpeg" alt="Card image cap" width="60%" style="align-items: center">
-          <div class="card-body">
-            <h3 class="card-title">Date: {{game.date}}</h3>
-            <h3 class="card-title">Location: {{game.location}}</h3>
-           
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">players in this game:</li>
-            {{#players}}
-            <li class="list-group-item">{{fname}} {{lname}}</li>
-  
-          </ul>
-          {{/players}} 
-          <div class="card-body">
-              <form action="/players/{{player.id}}?_method=DELETE" method="POST">
-                <button type="submit"  type="button" class="btn btn-success">Delete Player</button>
-              </form>
-              <br>
-              <form action="/players/{{player.id}}/edit" method="GET">
-                <button type="submit" type="button" class="btn btn-success">Edit</button>
+                    <br>
+                    <br>
+                    <div class="col-md-12 form-group">
+                        <button class="btn pull-right" type="submit">Send</button>
+                        
 
-              </form>
-          </div>
-        </div>
-        
-
-      
-     
                         
                     </div>
                 </div>
@@ -109,6 +103,3 @@ body {
 </body>
 
 </html>
-
-
-  

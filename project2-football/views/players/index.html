@@ -1,23 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous"> -->
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    .card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+a:hover { 
+  background-color: yellow;
+}
+
+body {
+ background-image: url("https://i.imgur.com/tdolZE1.png");
+ background-color: #cccccc;
+}
+    </style>
+    
+
     <title>Players</title>
 </head>
+
+
+
 <body>
 
-    <h1>All Players</h1>
-    <div class="links">
-      <a href="/">Go Home</a>
-      <a href="/players/new">Add a new player</a>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Almamlaka</h1>
+        <p>Saudi women football team</p>
     </div>
-    {{#players}}
-    <a href="/players/{{id}}">
-        <h2>{{fname}} {{lname}} </h2>
-      </a>  
-    
-    {{/players}}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Almamlaka</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li ><a href="/">Home</a></li>
+                    <li class="active"><a href="/players">Players </a></li>
+                    <li><a href="/games">Games</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            {{#players}}
+            <div class="card col-sm-4">
+                <img class="card-img-top" src="https://elitetix.com/upload/event/orig/project_16898.jpeg" alt="Card image cap">
+                <div class="card-body">
+
+                    <h5 class="card-title" style=" text-align: center ; color: black; "><a style=" text-align: center ; color: black; " href="/players/{{id}}">
+                            <h3>{{fname}} {{lname}} </h3>
+                        </a></h5>
+
+                </div>
+            </div>
+            {{/players}}
+        </div>
+
+
+
+        <br>
+        <br>
+   
+        <div class="text-center">
+
+
+            <a href="/players/new"> <button type="submit" type="button" class="btn btn-success"><span>Add a new player </span></button></a>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>Footer</p>
+    </div>
+
 </body>
+
 </html>
+
+
+<!-- 
+        </div>
+
+        <footer class="footer">
+                <a href="#">To the top</a>
+                <div class="footer-list">
+                </div>
+                <p>Powered by <a href="#"> Layal</a></p>
+            </footer>
+
+</body>
+
+</html> -->
+
+
+<!-- <header>
+
+            <div class="header">
+
+    <h1>All Players</h1> 
+
+                <a href="/" class="logo"><img src="https://imgur.com/XoWA5BS"></a>
+                <div class="header-right">
+                        <li><a href="/">Home</a></li>
+                    <li><a href="/players">Players </a></li>
+                    <li><a href="/games">Games</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                </div>
+            </div>
+        </header> -->

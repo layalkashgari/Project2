@@ -12,6 +12,8 @@ router.put('/:id', players.update, redirectShow);
 router.delete('/:id', players.delete, redirectIndex);
 router.get('/:id/edit', players.find, renderEdit);
 
+
+
 function renderIndex(req, res){
     var mustacheVariables = {
       players: res.locals.players
@@ -52,6 +54,7 @@ function renderNew(req, res) {
     }
     res.render('./players/new', mustacheVariables);
   }
+
 
 
 module.exports = router; 
