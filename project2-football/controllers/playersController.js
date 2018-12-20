@@ -31,6 +31,7 @@ function renderIndex(req, res){
 
 
 function renderEdit(req, res) {
+  console.log(res.locals.player)
   var mustacheVariables = {
     player: res.locals.player,
     // games: res.locals.games
